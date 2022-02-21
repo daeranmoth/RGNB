@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :set_experience, only: [:show, :destroy]
+  # before_action :set_experience, only: [:show, :destroy]
 
   def create
     @experience = Experience.new(experience_params)
@@ -18,9 +18,9 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.all
   end
 
-  def show
-    # @experience = Experience.find(params[:id])
-  end
+  # def show
+  #   # @experience = Experience.find(params[:id])
+  # end
 
   def destroy
     # @experience = Experience.find(params[:id])
@@ -34,7 +34,7 @@ class ExperiencesController < ApplicationController
     params.require(:experience).permit(:price_per_hour, :city, :description, :category, :availability, :user_id)
   end
 
-  def set_experience
-    @experience = Experience.find(params[:id])
-  end
+  # def set_experience
+  #   @experience = Experience.find(params[:id])
+  # end
 end
