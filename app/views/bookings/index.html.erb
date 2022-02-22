@@ -1,10 +1,36 @@
-<h1>All my bookings</h1>
+<h1>Tes réservations à venir en tant que escor </h1>
+
+
 
 <ul>
   <% @bookings.each do |booking| %>
-    <li> <%= rebooking.experience.category %></li>
+    <% if booking.user != current_user  %>
+      <div class="container">
+          <li>
+            <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
+          </li>
+      </  div>
+    <% end %>
   <% end %>
 </ul>
 
 
-<%= link_to "Add a booking", new_booking_path %>
+<br>
+
+<h1>Tes réservations à venir en tant que hôte </h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <% if booking.user == current_user  %>
+      <div class="container">
+          <li>
+           <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
+          </li>
+          <br>
+      </  div>
+    <% end %>
+  <% end %>
+</ul>
+
+
+<%= link_to "Trouver une nouvelle expérience", experiences_path %>

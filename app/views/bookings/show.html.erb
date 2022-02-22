@@ -1,8 +1,15 @@
-<h1>Ton booking</h1>
+<h1>Félicitations ton booking a été validé</h1>
+<h3>Details</h3>
+
 <div class="container">
+  <p> Activité : <%= @booking.experience.category %></p>
+  <p> Avec : <%= @booking.experience.user.first_name %></p>
+  <p> A : <%= @booking.experience.city %></p>
   <p> Début : <%= @booking.start_date %></p>
-  <p> fin : <%= @booking.end_date %></p>
+  <p> Fin : <%= @booking.end_date %></p>
   <p> Prix : <%= @booking.price %></p>
-
-
 </div>
+
+<%= link_to "Retour aux expériences", experiences_path %>
+<br>
+<%= link_to "Voir tous mes bookings", experience_bookings_path %>
