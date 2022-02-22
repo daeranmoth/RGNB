@@ -1,7 +1,11 @@
 <h1>All my experiences</h1>
 
+<ul>
 <% @experiences.each do |experience| %>
   <% if policy(experience).show? %>
-    <%= link_to "view experience details", experience_path(experience) %>
+    <li>Ville :<%= experience.city %></li>
+    <li>Prix par heure :<%= experience.price_per_hour %></li>
+    <%= link_to "Voir les details", experience_path(experience) %>
   <% end %>
 <% end %>
+</ul>
