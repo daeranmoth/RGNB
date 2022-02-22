@@ -14,6 +14,19 @@
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name, placeholder: 'John',
+              required: true %>
+    <%= f.input :last_name, placeholder: 'Doe',
+              required: true %>
+    <%= f.input :city, placeholder: 'Paris',
+              required: true %>
+    <%= f.input :gender, as: :radio_buttons, collection: ['Female', 'Male'],
+              wrapper: :vertical_collection_inline,
+              required: true %>
+    <%= f.input :age, placeholder: '28',
+              required: true %>
+    <%= f.input :phone_number, placeholder: '+33654611236',
+                required: true %>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>

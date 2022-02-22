@@ -4,22 +4,37 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name, placeholder: 'John',
+              required: true %>
+    <%= f.input :last_name, placeholder: 'Doe',
+              required: true %>
+    <%= f.input :city, placeholder: 'Paris',
+              required: true %>
+    <%= f.input :gender, as: :radio_buttons, collection: ['Female', 'Male'],
+              wrapper: :vertical_collection_inline,
+              required: true %>
+    <%= f.input :age, placeholder: '28',
+              required: true %>
+    <%= f.input :phone_number, placeholder: '+33654611236',
+                required: true %>
     <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
+              required: true,
+              autofocus: true,
+              input_html: { autocomplete: "email" }%>
     <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+              required: true,
+              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+              input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+              required: true,
+              input_html: { autocomplete: "new-password" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.submit "Sign up", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<%= link_to "Back", :back %>
 
 <%= render "devise/shared/links" %>

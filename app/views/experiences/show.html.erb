@@ -1,0 +1,12 @@
+<h1>Details de mon experience</h1>
+
+<ul>
+  <% if policy(@experience).show? %>
+    <li>Ville:<%= @experience.city %></li>
+    <li>Prix par heure:<%= @experience.price_per_hour %></li>
+    <li>Description:<%= @experience.description %></li>
+    <li>Categorie:<%= @experience.category %></li>
+    <li>Disponibilité:<%= @experience.availability %></li>
+    <%= link_to "Retour aux experiences", experiences_path %>
+  <% end %>
+</ul>
