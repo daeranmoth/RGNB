@@ -12,6 +12,14 @@
 </ul>
 
 
+    <% if policy(@experience).update? %>
+    <%= link_to "Modifier cette experience", edit_experience_path(@experience) %>
+    <% end %>
 
+    <% if policy(@experience).destroy? %>
+    <%= link_to "Supprimer cette experience", experience_path(@experience), method: :delete %>
+    <% end %>
+  
+  
 
 <%= link_to "Reserver cette expérience", new_user_experience_booking_path(@experience.user, @experience) %>
