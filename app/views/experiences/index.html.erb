@@ -1,0 +1,7 @@
+<h1>All my experiences</h1>
+
+<% @experiences.each do |experience| %>
+  <% if policy(experience).show? %>
+    <%= link_to "view experience details", experience_path(experience) %>
+  <% end %>
+<% end %>
