@@ -9,6 +9,7 @@
 require 'faker'
 
 User.destroy_all
+user_test = User.create!(email: 'test@test.com', first_name: 'testman', last_name: 'testmannn', password: '123456')
 10.times do
  user = User.new(
      email: Faker::Internet.email,
