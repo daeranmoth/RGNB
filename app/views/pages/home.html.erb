@@ -1,9 +1,12 @@
 <div class="home container">
-
+  <h1>RGNB, l'aventure humaine !</h1>
   <div>Grande photo</div>
   <br>
   <p>3 cards expériences</p>
   <br>
+   <%= link_to "Voir toutes les EXPERIENCES", experiences_path %>
+  <br>
+  <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %>
   <p>Footer</p>
 
 </div>

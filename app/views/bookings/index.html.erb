@@ -1,0 +1,10 @@
+<h1>All my bookings</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li> <%= rebooking.experience.category %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Add a booking", new_booking_path %>

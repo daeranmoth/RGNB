@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Profil de <%= @user.first_name%> <%= @user.last_name %></h1>
+  <ul>
+    <li>
+      <%= @user.gender  %>
+    </li>
+    <li>
+      <%= @user.city  %>
+    </li>
+    <li>
+      <%= @user.age %> years old
+    </li>
+    <li>
+      <%= @user.email  %>
+    </li>
+    <li>
+      <%= @user.phone_number  %>
+    </li>
+  </ul>
+
+
+
+  <%= link_to "Edit", edit_user_registration_path, method: :edit %>
+  <br>
+  <%= link_to "Back", :back %>
+
+</div>
