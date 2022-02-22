@@ -1,27 +1,28 @@
 <div class="container">
   <h1>Profil de <%= @user.first_name%> <%= @user.last_name %></h1>
-  <ul>
+  <ul class="list-unstyled">
     <li>
-      <%= @user.gender  %>
+      genre : <%= @user.gender  %>
     </li>
     <li>
-      <%= @user.city  %>
+      ville : <%= @user.city  %>
     </li>
     <li>
-      <%= @user.age %> years old
+      âge : <%= @user.age %> ans
     </li>
     <li>
-      <%= @user.email  %>
+      email : <%= @user.email  %>
     </li>
     <li>
-      <%= @user.phone_number  %>
+      numéro de téléphone : <%= @user.phone_number  %>
     </li>
   </ul>
 
 
 
-  <%= link_to "Edit", edit_user_registration_path, method: :edit %>
+  <%= link_to "Modifier profil", edit_user_registration_path(@user) %>
   <br>
-  <%= link_to "Back", :back %>
-
+  <div class="button">
+    <%= link_to "Retour", :back %>
+  </div>
 </div>

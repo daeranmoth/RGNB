@@ -1,0 +1,11 @@
+<h1>Editer l'experience</h1>
+
+<%= simple_form_for [@user, @experience] do |f| %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :city %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.submit "Editer l'experience", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Retour aux experiences", experiences_path %>

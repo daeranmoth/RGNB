@@ -1,5 +1,5 @@
-<h1>All my experiences</h1>
-  <%= link_to "Créer une experience", new_user_experience_path(@user) %>
+<h1>Toutes les experiences</h1>
+  <%= link_to "Créer une experience", new_experience_path %>
 
 <ul>
 <% @experiences.each do |experience| %>
@@ -7,7 +7,7 @@
     <li>Ville :<%= experience.city %></li>
     <li>Prix par heure :<%= experience.price_per_hour %></li>
     <%= link_to "Details", experience_path(experience) %>
-    <%= link_to "Supprimer", user_experience_path(current_user, experience), method: :delete %>
+    <%= link_to "Supprimer", experience_path(experience), method: :delete %>
   <% end %>
 <% end %>
 </ul>
