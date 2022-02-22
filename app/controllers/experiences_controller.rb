@@ -3,8 +3,10 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
+    @experience.user = current_user
+    authorize @experience
     if @experience.save
-      redirect_to experience_path(@experience)
+      redirect_to experience_path(@experience), notice: "experience created!"
     else
       render :new
     end
@@ -12,18 +14,21 @@ class ExperiencesController < ApplicationController
 
   def new
     @experience = Experience.new(experience_params)
+    authorize @experience
   end
 
   def index
-    @experiences = Experience.all
+    @experiences = policy_scope(Experience)
   end
 
-  # def show
-  #   # @experience = Experience.find(params[:id])
-  # end
+  def show
+    @experience = Experience.find(params[:id])
+    authorize @experience
+  end
 
   def destroy
-    # @experience = Experience.find(params[:id])
+    @experience = Experience.find(params[:id])
+    authorize @experience
     experience.destroy
     redirect_to experiences_path
   end

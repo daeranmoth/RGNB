@@ -1,1 +1,5 @@
 <h1>create a new experience</h1>
+
+<% if policy(Experience).create? %>
+  <%= link_to "Create an experience", new_user_experience_path %>
+<% end %>
