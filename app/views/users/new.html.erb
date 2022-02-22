@@ -1,0 +1,10 @@
+<%= simple_form_for [ @user ] do |f| %>
+  <%= f.input :first_name, placeholder: 'John' %>
+  <%= f.input :last_name, placeholder: 'Doe' %>
+  <%= f.input :email, placeholder: 'johndoe@mail.com' %>
+  <%= f.input :city, placeholder: 'Paris' %>
+  <%= f.input :gender, as: :radio_buttons, collection: ['F', 'M'] %>
+  <%= f.input :age, placeholder: '28' %>
+  <%= f.input :phone_number, placeholder: '+33654611236' %>
+  <%= f.submit "Suscribe !", class: "btn btn-primary" %>
+<% end %>
