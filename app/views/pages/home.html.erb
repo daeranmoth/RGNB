@@ -1,9 +1,36 @@
 <div class="home container">
-  <h1>RGNB, l'aventure humaine !</h1>
-  <div>Grande photo</div>
-  <br>
-  <p>3 cards expériences</p>
-  <br>
+
+  <div class="home-cards">
+
+    <%= link_to "#", class: "link_card" do %>
+      <div class="experience-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+      Concert
+      </div>
+    <% end %>
+
+    <%= link_to "#", class: "link_card" do %>
+      <div class="experience-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/4763907/pexels-photo-4763907.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+      Rando
+      </div>
+    <% end %>
+
+    <%= link_to "#", class: "link_card" do %>
+      <div class="experience-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/3184188/pexels-photo-3184188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+        Repas en famille
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
    <%= link_to "Voir toutes les EXPERIENCES", experiences_path %>
   <br>
   <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %>
