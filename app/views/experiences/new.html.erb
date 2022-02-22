@@ -1,5 +1,11 @@
-<h1>create a new experience</h1>
+<h1>Créer une nouvelle experience</h1>
 
-<% if policy(Experience).create? %>
-  <%= link_to "Create an experience", new_user_experience_path %>
+<%= simple_form_for [@user, @experience] do |f| %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :city %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.submit "Creer l'experience", class: "btn btn-primary" %>
 <% end %>
+
+<%= link_to "Retour aux experiences", experiences_path %>

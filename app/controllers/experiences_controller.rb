@@ -13,7 +13,7 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-    #@user = current_user
+    @user = current_user
     @experience = Experience.new
     authorize @experience
   end
