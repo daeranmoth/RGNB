@@ -3,22 +3,32 @@ class BookingsController < ApplicationController
 
   before_action :set_booking, only: [ :show, :edit, :update, :destroy]
   def index
-    @bookings = Booking.all
+    # @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    # authorize @booking
   end
 
   def new
+    # raise
+    @experience = Experience.find(params[:experience_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     # @booking.experience = record  => association du experience au booking
-    # @booking.user = current_user => association du user à au booking
+    @experience = Experience.find(params[:experience_id]) # association du experience au booking
+    @booking.experience = @experience
+    @booking.user = current_user # association du user à au booking
     @booking.save!
-    redirect_to booking_path(@booking)
+    redirect_to experience_booking_path(@experience, @booking)
+    authorize @booking
+    # authorise @experience
   end
 
   def show
+    authorize @booking
   end
 
   def edit
@@ -38,5 +48,4 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = Booking.find(params[:id])
   end
-
 end
