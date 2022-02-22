@@ -10,3 +10,8 @@
     <%= link_to "Retour aux experiences", experiences_path %>
   <% end %>
 </ul>
+
+
+
+
+<%= link_to "Reserver cette expérience", new_user_experience_booking_path(@experience.user, @experience) %>
