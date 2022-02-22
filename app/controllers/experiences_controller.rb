@@ -29,9 +29,10 @@ class ExperiencesController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @experience = Experience.find(params[:id])
     authorize @experience
-    experience.destroy
+    @experience.destroy
     redirect_to experiences_path
   end
 
