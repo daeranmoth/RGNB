@@ -46,8 +46,11 @@
 
   <h3>Supprimer mon compte</h3>
 
-  <p>Insatisfait? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes-vous sûr ?" }, method: :delete %></p>
-
-  <%= link_to "Retour", :back %>
-
+  <p>Insatisfait?</p>
+  <div class="button">
+    <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes-vous sûr ?" }, method: :delete %>
+  </div>
+  <div class="button">
+    <%= link_to "Retour", :back %>
+  </div>
 </div>
