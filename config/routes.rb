@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   resources :experiences, only: [ :show, :index, :destroy ]
 
 
-  resources :users do
-    resources :experiences, only: [ :new, :create ] do
-      resources :bookings, only: [ :index, :show, :new, :create, :edit, :update ]
-    end
+
+  resources :experiences, only: [ :new, :create ] do
+    resources :bookings, only: [ :index, :show, :new, :create, :edit, :update ]
   end
 
 end

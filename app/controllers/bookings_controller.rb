@@ -10,20 +10,31 @@ class BookingsController < ApplicationController
     # raise
     @experience = Experience.find(params[:experience_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @experience = Experience.find(params[:experience_id])
+    @booking.experience = @experience
+    @user = @booking.experience.user
+    @booking.user = @user
+
     # @booking.experience = record  => association du experience au booking
     # @booking.user = current_user => association du user à au booking
     @booking.save!
-    redirect_to user_booking_path(@booking)
+    # redirect_to user_experience_booking_path
+    redirect_to user_experience_booking_path(@user, @experience, @booking)
+    authorize @booking
+
   end
 
   def show
+      authorize @booking
   end
 
   def edit
+
   end
 
   def update
