@@ -13,11 +13,13 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-    @experience = Experience.new(experience_params)
+    #@user = current_user
+    @experience = Experience.new
     authorize @experience
   end
 
   def index
+    @user = current_user
     @experiences = policy_scope(Experience)
   end
 
