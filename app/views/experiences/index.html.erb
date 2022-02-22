@@ -1,11 +1,12 @@
 <h1>All my experiences</h1>
+  <%= link_to "Créer une experience", new_user_experience_path(experience) %>
 
 <ul>
 <% @experiences.each do |experience| %>
   <% if policy(experience).show? %>
     <li>Ville :<%= experience.city %></li>
     <li>Prix par heure :<%= experience.price_per_hour %></li>
-    <%= link_to "Voir les details", experience_path(experience) %>
+    <%= link_to "Voir les details", experience_path(@experience) %>
   <% end %>
 <% end %>
 </ul>
