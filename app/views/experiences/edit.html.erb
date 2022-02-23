@@ -4,8 +4,10 @@
   <%= f.input :price_per_hour, label:'Prix' %>
   <%= f.input :city, label:'Ville' %>
   <%= f.input :description, label:'Description' %>
-  <%= f.input :category, label:'Categorie' %>
-  <%= f.submit "Editer l'experience", class: "btn btn-primary" %>
+  <%= f.input :category, label:'Catégorie' %>
+  <%= f.submit "Editer l'experience", class: "custom-button" %>
 <% end %>
 
-<%= link_to "Retour aux experiences", experiences_path %>
+<div class="custom-button">
+  <%= link_to "Retour aux experiences", experiences_path %>
+</div>
