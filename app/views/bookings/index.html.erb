@@ -1,27 +1,27 @@
-<h1>Tes réservations à venir en tant que escor </h1>
+<h1>Tes réservations à venir avec des accompagnateurs</h1>
 
-
-
-<ul>
-  <% @bookings.each do |booking| %>
-    <% if booking.user != current_user  %>
-      <div class="container">
-          <li>
-            <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
-          </li>
-      </  div>
-    <% end %>
-  <% end %>
-</ul>
-
-
-<br>
-
-<h1>Tes réservations à venir en tant que hôte </h1>
 
 <ul>
   <% @bookings.each do |booking| %>
     <% if booking.user == current_user  %>
+      <div class="container">
+          <li>
+            <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
+            <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
+          </li>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
+<%= link_to "Réserver une nouvelle expérience", experiences_path %>
+
+<br>
+<br>
+<h1>Tes réservations à venir en tant que GnBer</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <% if booking.experience.user == current_user  %>
       <div class="container">
           <li>
            <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
@@ -33,4 +33,4 @@
 </ul>
 
 
-<%= link_to "Trouver une nouvelle expérience", experiences_path %>
+<%= link_to "Proposer une nouvelle expérience", new_experience_path %>

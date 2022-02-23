@@ -1,10 +1,10 @@
 <h1>Créer une nouvelle experience</h1>
 
-<%= simple_form_for [@user, @experience] do |f| %>
-  <%= f.input :price_per_hour %>
-  <%= f.input :city %>
-  <%= f.input :description %>
-  <%= f.input :category %>
+<%= simple_form_for @experience do |f| %>
+  <%= f.input :price_per_hour, label:'Prix' %>
+  <%= f.input :city, label:'Ville' %>
+  <%= f.input :description, label:'Description' %>
+  <%= f.input :category, label:'Categorie' %>
   <%= f.submit "Creer l'experience", class: "custom-button" %>
 <% end %>
 <div class="custom-button">
