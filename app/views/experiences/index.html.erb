@@ -1,13 +1,20 @@
-<h1>Toutes les experiences</h1>
-  <%= link_to "Créer une experience", new_experience_path %>
-
+<div class="container">
+  <h1>Toutes les experiences</h1>
+  <div class="custom-button">
+    <%= link_to "Créer une experience", new_experience_path %>
+  </div>
+</div>
 <ul>
 <% @experiences.each do |experience| %>
   <% if policy(experience).show? %>
     <li>Ville :<%= experience.city %></li>
     <li>Prix par heure :<%= experience.price_per_hour %></li>
-    <%= link_to "Details", experience_path(experience) %>
+    <div class="custom-button">
+      <%= link_to "Details", experience_path(experience) %>
+    </div>
+    <div class="custom-button">
     <%= link_to "Supprimer", experience_path(experience), method: :delete %>
+    </div>
   <% end %>
 <% end %>
 </ul>

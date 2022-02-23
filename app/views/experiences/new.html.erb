@@ -5,7 +5,8 @@
   <%= f.input :city %>
   <%= f.input :description %>
   <%= f.input :category %>
-  <%= f.submit "Creer l'experience", class: "btn btn-primary" %>
+  <%= f.submit "Creer l'experience", class: "custom-button" %>
 <% end %>
-
-<%= link_to "Retour aux experiences", experiences_path %>
+<div class="custom-button">
+  <%= link_to "Retour aux experiences", experiences_path %>
+</div>
