@@ -1,8 +1,5 @@
-.footer {
+footer {
   background: #93B7BE;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0px 50px;
   color: rgba(0, 0, 0, 0.594);
   position: fixed;
@@ -10,10 +7,32 @@
   width: 100%;
 }
 
+.footer-placement {
+  padding-top: 20px;
+  padding-right: 270px;
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  position: relative;
+  height: 164px;
+
+  & > div:last-child {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+  }
+}
+
 .footer-links {
   display: inline-block;
   align-items: center;
+
+  ul {
+    list-style: none;
+  }
 }
+
 .footer-links a {
   color: black;
   opacity: 0.15;
@@ -24,7 +43,8 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
+
+footer .fa-heart {
   color: #D23333;
 }
 
@@ -32,6 +52,6 @@
   opacity: 1;
 }
 
-body {
-  position: relative;
-}
+// body {
+//   position: relative;
+// }
