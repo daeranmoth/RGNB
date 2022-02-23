@@ -32,11 +32,15 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    authorize @booking
+    @experience = @booking.experience
   end
 
   def update
-    @booking.update(params[:booking])
-    redirect_to booking_path(@booking)
+    @booking.update(booking_params)
+    @experience = @booking.experience
+    redirect_to experience_booking_path(@experience, @booking)
+    authorize @booking
   end
 
   private
