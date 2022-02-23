@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   resources :experiences do
     resources :bookings, only: [ :index, :show, :new, :create, :edit, :update ]
   end
-
 end
