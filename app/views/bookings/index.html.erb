@@ -5,10 +5,10 @@
     <% if booking.user == current_user  %>
       <div class="container">
           <li>
-            <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
-            <div class="custom-button">
-              <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
-            </div>
+          Tu payeras <%=booking.experience.price_per_hour%>€ à <%=booking.experience.user.first_name%>  pour l'expérience <strong><%= booking.experience.category%></strong> le <%=booking.start_date%>
+          <div class="custom-button">
+            <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
+          </div>
           </li>
       </div>
     <% end %>
@@ -25,7 +25,10 @@
     <% if booking.experience.user == current_user  %>
       <div class="container">
           <li>
-           <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
+            <%=booking.experience.user.first_name%> te paye <%=booking.experience.price_per_hour%>€ le <%=booking.start_date%> pour l'expérience <strong><%= booking.experience.category%></strong> avec toi
+            <div class="custom-button">
+              <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
+            </div>
           </li>
           <br>
       </div>
