@@ -2,9 +2,7 @@
 
 <div class="container">
   <%= simple_form_for [@experience, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date%>
-    <%= f.input :price%>
+    <%= f.input :start_date, label:"Date" %>
     <%= f.submit %>
   <% end %>
 </div>
