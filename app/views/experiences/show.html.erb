@@ -16,5 +16,14 @@
     <% end %>
 
     <% if policy(@experience).destroy? %>
+<<<<<<< HEAD
     <%= link_to "Supprimer cette experience", experience_path(@experience), method: :delete %>
     <% end %>
+=======
+    <%= link_to "Supprimer cette expérience", experience_path(@experience), method: :delete %>
+    <% end %>
+
+    <%# <% if policy(@).destroy? %>
+    <%= link_to "Réserver cette expérience", new_experience_booking_path(@experience, @booking) %>
+    <%# <% end %>
+>>>>>>> 9b65e0b4c59785c921a33f0974904c952fb45ba7

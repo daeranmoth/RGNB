@@ -1,7 +1,7 @@
 <h1>Nouveau booking</h1>
 
 <div class="container">
-  <%= simple_form_for(@booking) do |f| %>
+  <%= simple_form_for [@experience, @booking] do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date%>
     <%= f.input :price%>
