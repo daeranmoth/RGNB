@@ -6,6 +6,7 @@
   <% if policy(experience).show? %>
     <li>Ville :<%= experience.city %></li>
     <li>Prix :<%= experience.price_per_hour %></li>
+    <li>Categorie :<%= experience.category %></li>
     <%= link_to "Details", experience_path(experience) %>
     <% if policy(experience).destroy? %>
     <%= link_to "Supprimer cette expérience", experience_path(experience), method: :delete %>
