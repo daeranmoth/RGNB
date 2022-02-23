@@ -5,11 +5,16 @@
   <p> Activité : <%= @booking.experience.category %></p>
   <p> Avec : <%= @booking.experience.user.first_name %></p>
   <p> A : <%= @booking.experience.city %></p>
-  <p> Début : <%= @booking.start_date %></p>
-  <p> Fin : <%= @booking.end_date %></p>
-  <p> Prix : <%= @booking.price %></p>
+  <p> Date : <%= @booking.start_date %></p>
 </div>
 
+<%= link_to "Modifier ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+<br>
+<%= link_to "annuler ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+<br>
+
+<br>
+<br>
 <%= link_to "Retour aux expériences", experiences_path %>
 <br>
 <%= link_to "Voir tous mes bookings", experience_bookings_path %>
