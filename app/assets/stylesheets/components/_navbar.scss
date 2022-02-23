@@ -4,6 +4,13 @@
   height: 140px;
 }
 
+h1 {
+  color: rgb(185, 121, 139);
+  font-family: $body-font;
+  position: absolute;
+  left: 106px;
+}
+
 .navbar-lewagon .navbar-collapse {
   background-color: beige;
   border-radius: 50px;
