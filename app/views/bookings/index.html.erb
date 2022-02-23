@@ -1,13 +1,14 @@
 <h1>Tes réservations à venir avec des accompagnateurs</h1>
 
-
 <ul>
   <% @bookings.each do |booking| %>
     <% if booking.user == current_user  %>
       <div class="container">
           <li>
             <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
-            <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
+            <div class="custom-button">
+              <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
+            </div>
           </li>
       </div>
     <% end %>
@@ -27,10 +28,11 @@
            <strong><%= booking.experience.category%></strong> avec <%=booking.experience.user.first_name%> le <%=booking.start_date%>
           </li>
           <br>
-      </  div>
+      </div>
     <% end %>
   <% end %>
 </ul>
 
-
-<%= link_to "Proposer une nouvelle expérience", new_experience_path %>
+<div class="custom-button">
+  <%= link_to "Proposer une nouvelle expérience", new_experience_path %>
+</div>

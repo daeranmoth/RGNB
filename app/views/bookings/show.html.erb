@@ -8,13 +8,22 @@
   <p> Date : <%= @booking.start_date %></p>
 </div>
 
-<%= link_to "Modifier ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+<div class="custom-button">
+  <%= link_to "Modifier ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+</div>
 <br>
-<%= link_to "annuler ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+
+<div class="custom-button">
+  <%= link_to "annuler ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+</div>
 <br>
 
 <br>
 <br>
-<%= link_to "Retour aux expériences", experiences_path %>
+<div class="custom-button">
+  <%= link_to "Retour aux expériences", experiences_path %>
+</div>
 <br>
-<%= link_to "Voir tous mes bookings", experience_bookings_path %>
+<div class="custom-button">
+  <%= link_to "Voir tous mes bookings", experience_bookings_path %>
+</div>
