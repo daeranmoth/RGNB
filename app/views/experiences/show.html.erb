@@ -31,14 +31,10 @@
       </div>
       <% end %>
 
-      <%# <% if policy(@).destroy? %>
-      <div class="custom-button">
-        <%= link_to "Réserver cette expérience", new_experience_booking_path(@experience, @booking) %>
-      </div>
-      <%# <% end %>
 
     <% unless @experience.user == current_user %>
     <div class="custom-button">
       <%= link_to "Réserver cette expérience", new_experience_booking_path(@experience, @booking) %>
     </div>
     <% end %>
+
