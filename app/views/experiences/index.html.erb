@@ -4,18 +4,23 @@
     <%= link_to "Créer une experience", new_experience_path %>
   </div>
 </div>
-<ul>
-<% @experiences.each do |experience| %>
-  <% if policy(experience).show? %>
-    <li>Ville :<%= experience.city %></li>
-    <li>Prix :<%= experience.price_per_hour %></li>
-    <div class="custom-button">
-      <%= link_to "Details", experience_path(experience) %>
-    </div>
-    <% if policy(experience).destroy? %>
-    <div class="custom-button">
-      <%= link_to "Supprimer cette expérience", experience_path(experience), method: :delete %>
+<div class="d-flex justify-content-between">
+  <ul>
+  <% @experiences.each do |experience| %>
+    <div class="card-product">
+      <% if policy(experience).show? %>
+        <li>Ville :<%= experience.city %></li>
+        <li>Prix :<%= experience.price_per_hour %></li>
+        <div class="custom-button">
+          <%= link_to "Details", experience_path(experience) %>
+        </div>
+        <% if policy(experience).destroy? %>
+        <div class="custom-button">
+          <%= link_to "Supprimer", experience_path(experience), method: :delete %>
+        </div>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
-<% end %>
-</ul>
+  </ul>
+</div>
