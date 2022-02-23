@@ -17,12 +17,6 @@
       </div>
     <% end %>
 
-    <% if policy(@experience).update? %>
-      <div class="custom-button">
-        <%= link_to "Modifier cette experience", edit_experience_path(@experience) %>
-      </div>
-    <% end %>
-
     <% if policy(@experience).destroy? %>
       <div class="custom-button">
         <%= link_to "Supprimer cette expérience", experience_path(@experience), method: :delete %>
