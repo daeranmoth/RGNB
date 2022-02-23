@@ -16,9 +16,11 @@
   <body class="background-color">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%#= render 'shared/search-bar' %>
 
-
-    <%= yield %>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
