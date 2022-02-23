@@ -3,7 +3,7 @@
 <ul>
   <% if policy(@experience).show? %>
     <li>Ville:<%= @experience.city %></li>
-    <li>Prix par heure:<%= @experience.price_per_hour %></li>
+    <li>Prix :<%= @experience.price_per_hour %></li>
     <li>Description:<%= @experience.description %></li>
     <li>Categorie:<%= @experience.category %></li>
     <li>Disponibilité:<%= @experience.availability %></li>
@@ -19,6 +19,6 @@
     <%= link_to "Supprimer cette expérience", experience_path(@experience), method: :delete %>
     <% end %>
 
-    <%# <% if policy(@).destroy? %>
+    <% unless @experience.user == current_user %>
     <%= link_to "Réserver cette expérience", new_experience_booking_path(@experience, @booking) %>
-    <%# <% end %>
+    <% end %>
