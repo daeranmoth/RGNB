@@ -2,39 +2,36 @@
   <h1>Détails de l'experience</h1>
   <ul class="list-unstyled">
     <% if policy(@experience).show? %>
-      <li>Ville:<%= @experience.city %></li>
-      <li>Prix :<%= @experience.price_per_hour %></li>
-      <li>Description:<%= @experience.description %></li>
-      <li>Categorie:<%= @experience.category %></li>
-      <li>Disponibilité:<%= @experience.availability %></li>
+      <li>Ville : <%= @experience.city %></li>
+      <li>Prix : <%= @experience.price_per_hour %></li>
+      <li>Description : <%= @experience.description %></li>
+      <li>Categorie : <%= @experience.category %></li>
       <div class="custom-button">
-        <%= link_to "Retour aux experiences", experiences_path %>
-      </div>  
+      <%= link_to "Retour aux experiences", experiences_path %>
+      </div>
     <% end %>
   </ul>
     <% if policy(@experience).update? %>
-    <div class="custom-button">
-      <%= link_to "Modifier cette experience", edit_experience_path(@experience) %>
-    </div> 
-     <% end %>
-  </ul>
-
-      <% if policy(@experience).update? %>
       <div class="custom-button">
         <%= link_to "Modifier cette experience", edit_experience_path(@experience) %>
       </div>
-      <% end %>
+    <% end %>
 
-      <% if policy(@experience).destroy? %>
+    <% if policy(@experience).update? %>
+      <div class="custom-button">
+        <%= link_to "Modifier cette experience", edit_experience_path(@experience) %>
+      </div>
+    <% end %>
+
+    <% if policy(@experience).destroy? %>
       <div class="custom-button">
         <%= link_to "Supprimer cette expérience", experience_path(@experience), method: :delete %>
       </div>
-      <% end %>
-
+    <% end %>
 
     <% unless @experience.user == current_user %>
     <div class="custom-button">
       <%= link_to "Réserver cette expérience", new_experience_booking_path(@experience, @booking) %>
     </div>
     <% end %>
-
+</div>
