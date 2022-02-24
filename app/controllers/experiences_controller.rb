@@ -26,6 +26,8 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     authorize @experience
+    @booking = Booking.new
+    authorize @booking
   end
 
   def destroy

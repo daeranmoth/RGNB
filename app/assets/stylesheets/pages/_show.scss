@@ -1,5 +1,44 @@
-.show-container {
-  border: 1px black;
-  margin: 5px;
-  padding: 10px;
+// .mettre photo user dans html
+
+.randonnee {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.pexels.com/photos/4763907/pexels-photo-4763907.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  height: 70vh;
+}
+
+.experience-card-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20vw;
+  height: 75%;
+}
+
+.booking-form {
+  display: flex;
+}
+
+.experience-category {
+
+}
+
+.user-photo {
+    width: 160px;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+}
+
+.exp-cat-name {
+  font-weight: bold;
+}
+
+.exp-cat-description {
+
+}
+
+.experience-card-bottom {
+  display: flex;
+  justify-content: center;
+  // mettre couleur fond
+  // ligne au milieu des 2 classes
 }
