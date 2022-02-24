@@ -21,27 +21,24 @@ class ExperiencesController < ApplicationController
   def index
     @user = current_user
     @experiences = policy_scope(Experience)
+    @experiences = @experiences.where(category: params[:query]) if params[:query]
   end
 
   def show
-    #@experience = Experience.find(params[:id])
     authorize @experience
   end
 
   def destroy
-    #@experience = Experience.find(params[:id])
     authorize @experience
     @experience.destroy
     redirect_to experiences_path
   end
 
   def edit
-    #@experience = Experience.find(params[:id])
     authorize @experience
   end
 
   def update
-    #@experience = Experience.find(params[:id])
     authorize @experience
     @experience.update(experience_params)
     redirect_to experience_path(@experience)
