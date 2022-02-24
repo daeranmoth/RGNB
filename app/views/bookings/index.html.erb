@@ -1,45 +1,55 @@
-<h1>Tes réservations à venir avec des accompagnateurs</h1>
 
-<ul>
+<div class="container">
+  <h1>Tes réservations à venir avec des accompagnateurs</h1>
+  <div class="custom-button">
+    <%= link_to "Réserver une nouvelle expérience", experiences_path %>
+  </div>
   <% @bookings.each do |booking| %>
     <% if booking.user == current_user  %>
-      <div class="container">
-          <li>
-          Tu payeras <%=booking.experience.price_per_hour%>€ à <%=booking.experience.user.first_name%>  pour l'expérience <strong><%= booking.experience.category%></strong> le <%=booking.start_date%>
-          <div class="custom-button">
-            <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
+      <div class="mini-card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+        <div class="mini-card-product-infos">
+          <div class="mini-card-product-details">
+            <h2> <%= booking.experience.category %> avec <%= booking.experience.user.first_name %></h2>
+            <p> <%= booking.experience.description %></p>
+            <h3><%= booking.start_date%> </h3>
           </div>
-          </li>
+
+          <div class="mini-card-product-details">
+            <h2><%= booking.experience.price_per_hour%>€ </h2>
+          </div>
+        </div>
       </div>
     <% end %>
   <% end %>
-</ul>
-<div class="custom-button">
-<%= link_to "Réserver une nouvelle expérience", experiences_path %>
 </div>
-<br>
-<br>
-<h1>Tes réservations à venir en tant que GnBer</h1>
 
-<ul>
+
+<div class="container">
+  <h1>Tes réservations à venir en tant qu'accompagnateur</h1>
+  <div class="custom-button">
+    <%= link_to "Proposer une nouvelle expérience", new_experience_path %>
+  </div>
+  <div class="custom-button">
+    <%= link_to "Retour aux experiences", experiences_path %>
+  </div>
+
   <% @bookings.each do |booking| %>
-    <% if booking.experience.user == current_user  %>
-      <div class="container">
-          <li>
-            <%=booking.experience.user.first_name%> te paye <%=booking.experience.price_per_hour%>€ le <%=booking.start_date%> pour l'expérience <strong><%= booking.experience.category%></strong> avec toi
-            <div class="custom-button">
-              <%= link_to "Details", experience_booking_path(booking.experience, booking)%>
-            </div>
-          </li>
-          <br>
+    <% if booking.experience.user == current_user %>
+      <div class="mini-card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+        <div class="mini-card-product-infos">
+          <div class="mini-card-product-details">
+            <h2> Tu accompagnes avec <%= booking.experience.user.first_name%>  pour l'activité <%= booking.experience.category %></h2>
+            <p> <%= booking.experience.description %></p>
+            <h3><%= booking.start_date%> </h3>
+          </div>
+
+          <div class="mini-card-product-details">
+            <h2><%= booking.experience.price_per_hour%>€ </h2>
+          </div>
+        </div>
       </div>
     <% end %>
   <% end %>
-</ul>
-
-<div class="custom-button">
-  <%= link_to "Proposer une nouvelle expérience", new_experience_path %>
-</div>
-<div class="custom-button">
-  <%= link_to "Retour aux experiences", experiences_path %>
 </div>
