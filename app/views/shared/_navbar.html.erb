@@ -29,7 +29,11 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           <%# </li> %>
           <li class="nav-item ">
+          <% if current_user.photo.key %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+          <% else %>
             <%= image_tag "https://images.pexels.com/photos/10724233/pexels-photo-10724233.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", class: "avatar"%>
+          <% end %>
           </li>
         <% else %>
           <li class="nav-item">
