@@ -26,6 +26,8 @@ class ExperiencesController < ApplicationController
 
   def show
     authorize @experience
+    @booking = Booking.new
+    authorize @booking
   end
 
   def destroy
