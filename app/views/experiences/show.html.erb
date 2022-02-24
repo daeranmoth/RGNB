@@ -2,14 +2,16 @@
 
 <%# descriptif experience a gauche %>
     <div class="experience-card-show">
-      <div class="user-photo" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5473391/pexels-photo-5473391.jpeg')">
-        <div class="user-name">
-          <%= @experience.user.first_name %>
-        </div>
-        <div class="user-description">
-          <%= @experience.user.description %>
-        </div>
-      </div>
+          <div>
+            <%= cl_image_tag @experience.user.photo.key, class:"user-photo" %>
+            <%# <div class="user-photo" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5473391/pexels-photo-5473391.jpeg')"> %>
+            <div class="user-name">
+              <%= @experience.user.first_name %>
+            </div>
+            <div class="user-description">
+              <%= @experience.user.description %>
+            </div>
+          </div>
 
       <div class="experience-cat">
         <p class="exp-cat-name"><%= @experience.category %></p>

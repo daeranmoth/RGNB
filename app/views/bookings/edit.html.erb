@@ -1,3 +1,5 @@
+<div class="container">
+<h1 class="centered-title">Modifier mon booking</h1>
 <ul>
   <% if policy(@experience).show? %>
     <li>Ville :<%= @experience.city %></li>
@@ -8,9 +10,7 @@
 </ul>
 
 
-<h1>Modifier ton booking</h1>
 
-<div class="container">
   <%= simple_form_for [@experience, @booking] do |f| %>
     <%= f.input :start_date %>
     <%= f.submit "Modifier", class:"custom-button"%>
