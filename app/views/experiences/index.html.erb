@@ -10,7 +10,7 @@
       <%= link_to experience_path(experience), class:'col-4' do %>
         <div>
           <div class="card-product">
-            <div><img src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1642038832/jlslskda1hap3hhjbxgz.jpg" alt=""></div>
+            <div><%= cl_image_tag experience.user.photo.key %></div>
             <div class="card-product-infos">
               <% if policy(experience).show? %>
                 <h2><%= experience.user.first_name %></h2>
