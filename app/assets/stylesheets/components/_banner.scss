@@ -1,0 +1,22 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 202px 0;
+  height: 300px;
+  text-align: center;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.texte {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 5px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 37px;
+  font-weight: bold;
+}
