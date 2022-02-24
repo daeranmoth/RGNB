@@ -11,20 +11,19 @@
   margin: 4px 2px;
   cursor: pointer;
   color: $light-cyan;
-  box-shadow: $black-chocolate;
   }
 
 .custom-button:hover{
-  color:#CD5D67;
+  color: black;
 }
 
 a {
   text-decoration: none;
-  color: #D4F5F5;
+  color: $light-cyan;
 }
 
 a:hover {
-  color: #CD5D67 !important;
+  color: black;
 }
 
 // $blue-charcoal: #334E58;

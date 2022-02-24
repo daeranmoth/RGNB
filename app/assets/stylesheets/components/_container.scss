@@ -1,7 +1,14 @@
-.container {
-  border: 1px black;
-  margin: 5px;
+.list-container {
   padding: 10px;
-  justify-content: space-between;
+  margin: 0, auto;
+}
+
+.box {
   align-items: center;
+  justify-content: space-around;
+}
+
+.box div {
+  width: 350px;
+  height: 100px;
 }

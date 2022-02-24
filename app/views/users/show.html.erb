@@ -2,6 +2,9 @@
   <h1>Profil de <%= @user.first_name%> <%= @user.last_name %></h1>
   <ul class="list-unstyled">
     <li>
+      photo de profil : <%= cl_image_tag @user.photo.key, class: "avatar" %>
+    </li>
+    <li>
       genre : <%= @user.gender  %>
     </li>
     <li>

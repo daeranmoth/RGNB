@@ -1,0 +1,54 @@
+.mini-card-product {
+  overflow: hidden;
+  // width: 50%;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  // justify-content: space-between;
+}
+
+.mini-card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.mini-card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mini-card-product h3 {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+.mini-card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.mini-card-product .mini-card-product-infos {
+  padding: 16px;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  // align-items: center;
+  justify-content: space-between
+
+}
+
+.mini-card-product .mini-card-product-details {
+  padding: 5px;
+}

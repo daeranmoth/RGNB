@@ -1,8 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid position-relative">
-    <%# <%= link_to "#", class: "navbar-brand" do %>
-       <%= image_tag "logo.png", class:"logo" %>
-    <%# <% end %>
+    <%= link_to image_tag("logo.png", class:"logo"), root_path %>
+
       <h1 id='logo'>Airgnb</h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,9 +17,8 @@
 
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Profil", user_path(current_user), class: "dropdown-item" %>
-                <%= link_to "Messages", "#", class: "dropdown-item" %>
-                <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-                <%= link_to "Aide", "#", class: "dropdown-item" %>
+                <%= link_to "Messagerie", "#", class: "dropdown-item" %>
+                <%= link_to "Tableau de bord", experience_bookings_path(current_user), class: "dropdown-item" %>
                 <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </div>
@@ -29,7 +27,11 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           <%# </li> %>
           <li class="nav-item ">
+          <% if current_user.photo.key %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+          <% else %>
             <%= image_tag "https://images.pexels.com/photos/10724233/pexels-photo-10724233.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", class: "avatar"%>
+          <% end %>
           </li>
         <% else %>
           <li class="nav-item">

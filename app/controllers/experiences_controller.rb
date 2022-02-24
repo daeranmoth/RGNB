@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  # before_action :set_experience, only: [:show, :destroy]
+  before_action :set_experience, only: [:show, :destroy, :edit, :update]
 
   def create
     @experience = Experience.new(experience_params)
@@ -21,27 +21,26 @@ class ExperiencesController < ApplicationController
   def index
     @user = current_user
     @experiences = policy_scope(Experience)
+    @experiences = @experiences.where(category: params[:query]) if params[:query]
   end
 
   def show
-    @experience = Experience.find(params[:id])
     authorize @experience
+    @booking = Booking.new
+    authorize @booking
   end
 
   def destroy
-    @experience = Experience.find(params[:id])
     authorize @experience
     @experience.destroy
     redirect_to experiences_path
   end
 
   def edit
-    @experience = Experience.find(params[:id])
     authorize @experience
   end
 
   def update
-    @experience = Experience.find(params[:id])
     authorize @experience
     @experience.update(experience_params)
     redirect_to experience_path(@experience)
@@ -53,7 +52,7 @@ class ExperiencesController < ApplicationController
     params.require(:experience).permit(:price_per_hour, :city, :description, :category, :availability, :user_id)
   end
 
-  # def set_experience
-  #   @experience = Experience.find(params[:id])
-  # end
+  def set_experience
+    @experience = Experience.find(params[:id])
+  end
 end
