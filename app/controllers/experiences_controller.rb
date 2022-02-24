@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  # before_action :set_experience, only: [:show, :destroy]
+  before_action :set_experience, only: [:show, :destroy, :edit, :update]
 
   def create
     @experience = Experience.new(experience_params)
@@ -24,24 +24,24 @@ class ExperiencesController < ApplicationController
   end
 
   def show
-    @experience = Experience.find(params[:id])
+    #@experience = Experience.find(params[:id])
     authorize @experience
   end
 
   def destroy
-    @experience = Experience.find(params[:id])
+    #@experience = Experience.find(params[:id])
     authorize @experience
     @experience.destroy
     redirect_to experiences_path
   end
 
   def edit
-    @experience = Experience.find(params[:id])
+    #@experience = Experience.find(params[:id])
     authorize @experience
   end
 
   def update
-    @experience = Experience.find(params[:id])
+    #@experience = Experience.find(params[:id])
     authorize @experience
     @experience.update(experience_params)
     redirect_to experience_path(@experience)
