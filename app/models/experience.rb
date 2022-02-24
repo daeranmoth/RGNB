@@ -3,6 +3,6 @@ class Experience < ApplicationRecord
   validates :city, presence: true
   validates :price_per_hour, presence: true
   validates :description, presence: true
-  validates :category, presence: true
+  validates :category, presence: true, inclusion: { in: ["Randonnée", "Visite", "Tir", "Concert", "Pêche", "Fight club", "Chasse"], allow_nil: false }
   belongs_to :user
 end
