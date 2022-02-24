@@ -1,3 +1,4 @@
+CATEGORY = ["Randonnée", "Visite", "Tir", "Concert", "Pêche", "Fight club", "Chasse"]
 class Experience < ApplicationRecord
   has_many :bookings
   validates :city, presence: true

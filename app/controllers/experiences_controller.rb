@@ -53,7 +53,7 @@ class ExperiencesController < ApplicationController
     params.require(:experience).permit(:price_per_hour, :city, :description, :category, :availability, :user_id)
   end
 
-  # def set_experience
-  #   @experience = Experience.find(params[:id])
-  # end
+  def set_experience
+    @experience = Experience.find(params[:id])
+  end
 end
