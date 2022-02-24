@@ -17,9 +17,8 @@
 
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Profil", user_path(current_user), class: "dropdown-item" %>
-                <%= link_to "Messages", "#", class: "dropdown-item" %>
-                <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-                <%= link_to "Aide", "#", class: "dropdown-item" %>
+                <%= link_to "Messagerie", "#", class: "dropdown-item" %>
+                <%= link_to "Tableau de bord", experience_bookings_path(current_user), class: "dropdown-item" %>
                 <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </div>
