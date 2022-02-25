@@ -5,12 +5,22 @@
 }
 
 #logo {
-  color: rgb(185, 121, 139);
+  color: white;
   font-family: $body-font;
   position: absolute;
-  left: 106px;
+  left: 33px;
+  margin: 0;
+  padding: 10px 10px 10px 54px;
+  background-color: #F05465;
+  border-radius: 40px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
-
+.logo-link {
+  z-index: 1;
+}
 .navbar-lewagon .navbar-collapse {
   background-color: #FFFFFF;
   border-radius: 50px;
@@ -30,6 +40,9 @@
   width: 70px;
   height: 70px;
   object-fit: cover;
+}
+.dropdown-menu.show {
+    width: 100%;
 }
 
 .nav-link {
