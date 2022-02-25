@@ -6,7 +6,7 @@ class ExperiencesController < ApplicationController
     @experience.user = current_user
     authorize @experience
     if @experience.save
-      redirect_to experience_path(@experience), notice: "experience created!"
+      redirect_to experiences_path(@experiences), notice: "experience created!"
     else
       render :new
     end
