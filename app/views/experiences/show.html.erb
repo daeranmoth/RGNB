@@ -28,8 +28,7 @@
     </div>
 
   <%# formulaire de réservation %>
-  <div class="booking-form">
-    <P class="book-invite">Réserve cette expérience:</P>
+  <div class="booking-form" data-controller="flatpick">
     <%= simple_form_for [@experience, @booking] do |f| %>
       <%= f.input :start_date, as: :string, label:"Date", input_html: {class: "datepicker date"} %>
       <%= f.submit class: "custom-button" %>

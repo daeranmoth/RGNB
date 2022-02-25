@@ -21,7 +21,7 @@ class ExperiencesController < ApplicationController
   def index
     @user = current_user
     @experiences = policy_scope(Experience)
-    @experiences = @experiences.where(category: params[:query]) if params[:query]
+    @experiences = @experiences.where(category: params[:category]) if params[:category]
   end
 
   def show
