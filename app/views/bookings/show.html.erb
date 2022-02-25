@@ -1,17 +1,17 @@
 <div class="container">
-<h1>Félicitations ton booking a été validé</h1>
-<br>
-<h3>Details</h3>
+  <h1>Félicitations ton booking a été validé</h1>
+  <br>
+  <h3>Details</h3>
 
   <p> Activité : <%= @booking.experience.category %></p>
   <p> Avec : <%= @booking.experience.user.first_name %></p>
   <p> A : <%= @booking.experience.city %></p>
   <p> Date : <%= @booking.start_date %></p>
-<div class="custom-button">
-<%= link_to "Modifier ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
-</div>
-<div class="custom-button">
-<%= link_to "Voir tous mes bookings", experience_bookings_path %>
-</div>
-<%# <%= link_to "annuler ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+  <div class="custom-button" id="new_experience">
+    <%= link_to "Modifier ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
+  </div>
+  <div class="custom-button" id="new_experience">
+    <%= link_to "Voir tous mes bookings", experience_bookings_path %>
+  </div>
+  <%# <%= link_to "annuler ce booking", edit_experience_booking_path(@booking.experience, @booking) %>
 </div>
