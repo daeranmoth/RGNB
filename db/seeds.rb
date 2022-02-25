@@ -10,9 +10,6 @@ require "open-uri"
 require 'faker'
 
 User.destroy_all
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
-user = User.create!(email: 'test@test.com', first_name: 'testman', last_name: 'testmannn', password: '123456', city: 'Paris', gender: 'masculin', age: 66)
-user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file2 = URI.open('https://ca.slack-edge.com/T02NE0241-U02T2GDMEMC-ffb6e06fd496-512')
 user2 = User.create!(email: 'fabrice@gmail.com', first_name: 'fabrice', last_name: 'Kana', password: '123456', city: 'Berlin', gender: 'masculin', age: 30)
