@@ -10,13 +10,17 @@
     <%# search bar %>
   <%# <div class="search-bar row d-flex"> %>
   <div class="dropdown">
-    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-secondary btn-search btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Quelle sera votre prochaine expérience?
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+      <%= link_to "Randonnée", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Visite", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Tir", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Concert", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Pêche", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Fight club", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Chasse", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
     </div>
   </div>
 

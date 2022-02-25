@@ -19,6 +19,7 @@ class ExperiencesController < ApplicationController
   end
 
   def index
+    raise
     @user = current_user
     @experiences = policy_scope(Experience)
     @experiences = @experiences.where(category: params[:query]) if params[:query]
