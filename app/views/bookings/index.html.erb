@@ -30,9 +30,6 @@
   <div class="custom-button">
     <%= link_to "Proposer une nouvelle expérience", new_experience_path %>
   </div>
-  <div class="custom-button">
-    <%= link_to "Retour aux experiences", experiences_path %>
-  </div>
 
   <% @bookings.each do |booking| %>
     <% if booking.experience.user == current_user %>
