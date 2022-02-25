@@ -14,7 +14,7 @@
   }
 
 .custom-button:hover{
-  color: black;
+  color: rgb(161, 159, 157)
 }
 
 a {
@@ -23,7 +23,18 @@ a {
 }
 
 a:hover {
-  color: black;
+  color: rgb(161, 159, 157)
+}
+
+#btn-navbar-big {
+  position: absolute;
+  left: 33%;
+}
+
+#btn-navbar-small {
+  position: absolute;
+  left: 80%;
+  margin-bottom: 30px;
 }
 
 // $blue-charcoal: #334E58;
