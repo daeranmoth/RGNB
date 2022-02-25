@@ -39,21 +39,23 @@
     </div>
 
     <% @bookings.each do |booking| %>
-      <% if booking.experience.user == current_user %>
-        <div class="mini-card-product">
-          <div><%= cl_image_tag booking.experience.user.photo.key %></div>
-          <div class="mini-card-product-infos">
-            <div class="mini-card-product-details">
-              <h2> Tu accompagnes <%= booking.experience.user.first_name%>  pour l'activité de <%= booking.experience.category %></h2>
-              <p> <%= booking.experience.description %></p>
-              <h3><%= booking.start_date%> </h3>
-            </div>
+      <%= link_to experience_path(booking.experience) do %>
+        <% if booking.experience.user == current_user %>
+          <div class="mini-card-product">
+            <div><%= cl_image_tag booking.user.photo.key %></div>
+            <div class="mini-card-product-infos">
+              <div class="mini-card-product-details">
+                <h2> Tu accompagnes <%= booking.experience.user.first_name%>  pour l'activité de <%= booking.experience.category %></h2>
+                <p> <%= booking.experience.description %></p>
+                <h3><%= booking.start_date%> </h3>
+              </div>
 
-            <div class="mini-card-product-details">
-              <h2><%= booking.experience.price_per_hour%>€ </h2>
+              <div class="mini-card-product-details">
+                <h2><%= booking.experience.price_per_hour%>€ </h2>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
