@@ -1,7 +1,7 @@
 
 .custom-button {
   background-color: $blue-charcoal;
-  border-radius: 5px;
+  border-radius: 40px;
   padding: 10px 10px;
   margin: 5px;
   text-align: center;
@@ -14,7 +14,7 @@
   }
 
 .custom-button:hover{
-  color: rgb(161, 159, 157)
+  color: beige
 }
 
 a {
@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  color: rgb(161, 159, 157)
+  color: beige
 }
 
 #btn-navbar-big {
