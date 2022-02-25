@@ -1,7 +1,7 @@
 
 .custom-button {
   background-color: $blue-charcoal;
-  border-radius: 5px;
+  border-radius: 40px;
   padding: 10px 10px;
   margin: 5px;
   text-align: center;
@@ -14,16 +14,28 @@
   }
 
 .custom-button:hover{
-  color: black;
+  color: beige
 }
 
-a {
+.custom-button a {
   text-decoration: none;
   color: $light-cyan;
 }
 
+
 a:hover {
-  color: black;
+  color: beige
+}
+
+#btn-navbar-big {
+  position: absolute;
+  left: 33%;
+}
+
+#btn-navbar-small {
+  position: absolute;
+  left: 80%;
+  margin-bottom: 30px;
 }
 
 // $blue-charcoal: #334E58;

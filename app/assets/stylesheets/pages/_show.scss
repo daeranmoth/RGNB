@@ -1,44 +1,94 @@
-// .mettre photo user dans html
+.container-header {
+  text-align: center;
+  margin-bottom: 32px;
+  color: #77aeb9;
+  font-size: 3rem;
+  text-align: left;
+  padding-left: 25px;
+}
 
-.randonnee {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.pexels.com/photos/4763907/pexels-photo-4763907.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  height: 70vh;
+.d-flex {
+  justify-content: space-around;
+  margin-bottom: 34px;
 }
 
 .experience-card-show {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20vw;
-  height: 75%;
+  border-radius: 14px;
+  width: 45%;
 }
 
-.booking-form {
+.user-profile {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.experience-category {
-
-}
-
-.user-photo {
-    width: 160px;
-    height: 160px;
-    background-size: cover;
-    background-position: center;
+.user-name {
+  color: white;
+  font-size: 29px;
+  padding: 4px 13px;
+  background-color: #92b7be99;
 }
 
 .exp-cat-name {
   font-weight: bold;
 }
 
-.exp-cat-description {
+.exp-cat-name {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: #93B7BE;
+}
 
+.exp-cat-description {
+  padding: 20px;
+  margin-bottom: 10px;
 }
 
 .experience-card-bottom {
   display: flex;
-  justify-content: center;
-  // mettre couleur fond
-  // ligne au milieu des 2 classes
+  justify-content: space-around;
+  background-color: #93B7BE;
+  padding: 18px;
+  font-size: bold;
+}
+
+.experience-card-town {
+  border-right: 3px solid #ffffff;
+  padding-right: 140px;
+}
+
+// Form
+.booking-form {
+  background-color: #d6dddf;
+  padding: 60px 50px;
+  width: 35%;
+}
+
+.book-invite {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  text-decoration: underline;
+}
+
+.date {
+  margin: auto;
+  width: 100%;
+}
+
+.custom-button {
+  align-items: center;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 40px;
 }
