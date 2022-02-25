@@ -4,15 +4,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('banner.jpg') %>)">
   <div class="container">
     <div class="banner-text">
-      <p>Vous vous sentez seul?</p>
+      <p>Vous vous sentez seul.e ?</p>
       <p> Parfait!</p>
     </div>
   </div>
 </div>
 
   <%# 3 experiences %>
+  <div class="container home-container-custom">
+  <h2>Des expériences pour tous les goûts !</h2>
+  </div>
   <div class="home-cards">
-
     <%= link_to "/experiences?query=Concert", class: "link_card" do %>
       <div class="experience-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
       Concert

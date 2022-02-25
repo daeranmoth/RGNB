@@ -16,3 +16,13 @@
 .container {
   margin-bottom: 30px;
 }
+
+
+.container.home-container-custom {
+  display: flex;
+  justify-content: center;
+  margin: 55px 0 0 0;
+  h2 {
+    font-family: "Work Sans";
+  }
+}

@@ -3,3 +3,11 @@
   margin-bottom: 2px;
   min-height: calc(100vh - 140px - 164px );
 }
+
+#new_experience {
+  max-width: 400px;
+  margin: auto;
+  .custom-button {
+    width: fit-content;
+  }
+}
