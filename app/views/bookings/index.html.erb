@@ -1,55 +1,59 @@
+<%= link_to "Retour aux experiences", experiences_path, class: "back-button" %>
+<div class="mini-card-container">
+  <div class="container-card">
+    <%# <h1>Tes réservations avec des accompagnateurs</h1> %>
+    <h1>Tes expériences à vivre</h1>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Nouvelle réservation", experiences_path, class: "custom-button" %>
+    </div>
 
-<div class="container">
-  <h1>Tes réservations à venir avec des accompagnateurs</h1>
-  <div class="custom-button">
-    <%= link_to "Réserver une nouvelle expérience", experiences_path %>
-  </div>
-  <% @bookings.each do |booking| %>
-    <% if booking.user == current_user  %>
-      <div class="mini-card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-        <div class="mini-card-product-infos">
-          <div class="mini-card-product-details">
-            <h2> <%= booking.experience.category %> avec <%= booking.experience.user.first_name %></h2>
-            <p> <%= booking.experience.description %></p>
-            <h3><%= booking.start_date%> </h3>
+    <% @bookings.each do |booking| %>
+      <%= link_to experience_path(booking.experience) do %>
+        <% if booking.user == current_user  %>
+          <div class="mini-card-product">
+            <div><%= cl_image_tag booking.experience.user.photo.key %></div>
+            <div class="mini-card-product-infos">
+              <div class="mini-card-product-details">
+                <h2> <%= booking.experience.category %> avec <%= booking.experience.user.first_name %></h2>
+                <p> <%= booking.experience.description.truncate(12) %></p>
+                <h3><%= booking.start_date%> </h3>
+              </div>
+
+              <div class="mini-card-product-details">
+                <h2><%= booking.experience.price_per_hour%>€ </h2>
+              </div>
+            </div>
           </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 
-          <div class="mini-card-product-details">
-            <h2><%= booking.experience.price_per_hour%>€ </h2>
+
+  <div class="container-card">
+    <h1>Tes expériences à partager</h1>
+
+    <div class="d-flex justify-content-center">
+      <%= link_to "Nouvelle expérience", new_experience_path, class: "custom-button" %>
+    </div>
+
+    <% @bookings.each do |booking| %>
+      <% if booking.experience.user == current_user %>
+        <div class="mini-card-product">
+          <div><%= cl_image_tag booking.experience.user.photo.key %></div>
+          <div class="mini-card-product-infos">
+            <div class="mini-card-product-details">
+              <h2> Tu accompagnes avec <%= booking.experience.user.first_name%>  pour l'activité <%= booking.experience.category %></h2>
+              <p> <%= booking.experience.description %></p>
+              <h3><%= booking.start_date%> </h3>
+            </div>
+
+            <div class="mini-card-product-details">
+              <h2><%= booking.experience.price_per_hour%>€ </h2>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-
-
-<div class="container">
-  <h1>Tes réservations à venir en tant qu'accompagnateur</h1>
-  <div class="custom-button">
-    <%= link_to "Proposer une nouvelle expérience", new_experience_path %>
   </div>
-  <div class="custom-button">
-    <%= link_to "Retour aux experiences", experiences_path %>
-  </div>
-
-  <% @bookings.each do |booking| %>
-    <% if booking.experience.user == current_user %>
-      <div class="mini-card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-        <div class="mini-card-product-infos">
-          <div class="mini-card-product-details">
-            <h2> Tu accompagnes avec <%= booking.experience.user.first_name%>  pour l'activité <%= booking.experience.category %></h2>
-            <p> <%= booking.experience.description %></p>
-            <h3><%= booking.start_date%> </h3>
-          </div>
-
-          <div class="mini-card-product-details">
-            <h2><%= booking.experience.price_per_hour%>€ </h2>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
 </div>
