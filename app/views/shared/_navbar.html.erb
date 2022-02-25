@@ -1,11 +1,30 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid position-relative">
+  <div class="container-fluid" style="position: relative">
     <%= link_to image_tag("logo.png", class:"logo"), root_path %>
 
       <h1 id='logo'>Airgnb</h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <%# search bar %>
+  <%# <div class="search-bar row d-flex"> %>
+  <div class="dropdown" id="btn-navbar-big">
+    <button class="btn btn-secondary btn-search btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Quelle sera votre prochaine expérience?
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%= link_to "Randonnée", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Visite", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Tir", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Concert", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Pêche", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Fight club", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+      <%= link_to "Chasse", experiences_path(category: "Randonnée"), class: "dropdown-item"  %>
+    </div>
+  </div>
+
+    <div style="margin-bottom: 45px;"><%= button_to "Proposer une expérience", new_experience_path, class: "btn btn-secondary btn-search btn-sm", id: "btn-navbar-small", method: :get %> </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -23,9 +42,7 @@
               </div>
             </div>
           </li>
-           <%# <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          <%# </li> %>
+
           <li class="nav-item ">
           <% if current_user.photo.key %>
             <%= cl_image_tag current_user.photo.key, class: "avatar" %>
